@@ -1,12 +1,12 @@
 <template>
-  <div>Plan</div>
+  <div>
+    <create></create>
+  </div>
 </template>
 <script>
+import Create from './create'
 export default {
-  data() {
-    return {
-    };
-  },
+  components:{Create}
 };
 </script>
 
