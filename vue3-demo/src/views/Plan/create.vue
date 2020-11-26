@@ -24,7 +24,7 @@
 import { reactive, toRefs } from 'vue'
 import moment from 'moment'
 export default {
- setup(){
+ setup(props,context){
    const state = reactive({
      form:{
        date:moment(Date.now()).format('YYYY-MM-DD'),
@@ -33,9 +33,10 @@ export default {
      }
    })
    const onSubmit = ()=>{
-     console.log(state.form)
+     context.emit('handlePlan',state.form)
    }
    return {
+     onSubmit,
      ...toRefs(state)
    }
  }
